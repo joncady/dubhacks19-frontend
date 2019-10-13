@@ -20,6 +20,9 @@ import SummaryChart from './components/SummaryChart/SummaryChart';
 import { AppStyle, ViewportStyle, TabStyle, OneTabStyle } from './globalStyle';
 import Meal from './screens/Meal/Meal';
 
+// Screens
+import Landing from './screens/Landing/Landing';
+
 class App extends React.Component {
 
 	constructor() {
@@ -70,6 +73,9 @@ class App extends React.Component {
 								</Route>
 								<Route path="/signupBudget">
 									<UserBudgetForm />
+								</Route>
+								<Route path="/landing">
+									<Landing />
 								</Route>
 							</Switch>
 						</ViewportStyle>
