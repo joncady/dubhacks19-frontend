@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 const UserNameForm = (props) => {
-
+  let { firstName, lastName, location, onChange } = props;
   let style = {
     backgroundColor: 'transparent',
     outline: '0',
@@ -28,9 +28,9 @@ const UserNameForm = (props) => {
                 marginLeft: 'auto',
                 marginRight: 'auto'
               }}/>
-              <InputSpacer><Input type="text" name="text" id="userFirstName" placeholder="First Name" style={style}/></InputSpacer>
-              <InputSpacer><Input type="text" name="text" id="userLastName" placeholder="Last Name" style={style}/></InputSpacer>
-              <InputSpacer><Input type="text" name="text" id="userLocation" placeholder="Location" style={style}/></InputSpacer>
+              <InputSpacer><Input type="text" onChange={(e) => onChange("firstName", e.currentTarget.value)} value={firstName} name="text" id="userFirstName" placeholder="First Name" style={style}/></InputSpacer>
+              <InputSpacer><Input type="text" onChange={(e) => onChange("lastName", e.currentTarget.value)} value={lastName} name="text" id="userLastName" placeholder="Last Name" style={style}/></InputSpacer>
+              <InputSpacer><Input type="text" onChange={(e) => onChange("location", e.currentTarget.value)} value={location} name="text" id="userLocation" placeholder="Location" style={style}/></InputSpacer>
           </FormGroup>
           <ButtonSpacer><Link to="/signupPreferences"><Button color="success" size="lg">Next</Button>{' '}</Link></ButtonSpacer>
       </Form>

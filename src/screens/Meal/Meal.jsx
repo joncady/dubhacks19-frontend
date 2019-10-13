@@ -7,7 +7,6 @@ export default class Meal extends React.Component {
 
     render() {
         let { meals } = this.props;
-        console.log(meals)
         return (
             <div>
                 <MealHeader savings={35} user={"User 1"} />
@@ -19,8 +18,8 @@ export default class Meal extends React.Component {
                             <MealRow type={"Night"} meals={meals.mealsNight}></MealRow>
                         </div>
                         :
-                        <div style={{ textAlign: "center"}}>
-                            <SquareLoader />
+                        <div style={{ textAlign: "center", marginTop: '1em'}}>
+                            <SquareLoader color={"#58C077"} />
                         </div>
                     }
                 </StyledMealContainer>

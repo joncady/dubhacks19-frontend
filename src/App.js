@@ -30,7 +30,15 @@ class App extends React.Component {
 		this.state = {
 			user: null,
 			meals: null,
-			client: new Client()
+			client: new Client(),
+			form: {
+				firstName: "",
+				lastName: "",
+				location: "",
+				currency: "USD",
+				budget: 0,
+				calorieGoal: 0
+			}
 		}
 	}
 
@@ -51,8 +59,21 @@ class App extends React.Component {
 		})
 	}
 
+	changeFormData = (key, value) => {
+		this.setState(prevState => {
+			return {
+				...prevState,
+				form: {
+					...prevState.form,
+					[key]: value
+				}
+			}
+		})
+	}
+
 	render() {
-		let { summary, meals } = this.state;
+		let { summary, meals, form } = this.state;
+		console.log(form)
 		return (
 			<div className="App">
 				<AppStyle>
@@ -66,13 +87,13 @@ class App extends React.Component {
 									<SummaryChart summary={summary} />
 								</Route>
 								<Route path="/signupName">
-									<UserNameForm />
+									<UserNameForm onChange={this.changeFormData} {...form}/>
 								</Route>
 								<Route path="/signupPreferences">
-									<UserPreferencesForm />
+									<UserPreferencesForm onChange={this.changeFormData} {...form} />
 								</Route>
 								<Route path="/signupBudget">
-									<UserBudgetForm />
+									<UserBudgetForm onChange={this.changeFormData} {...form} />
 								</Route>
 								<Route path="/landing">
 									<Landing />

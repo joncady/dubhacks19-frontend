@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { StyledHeader, StyledImage, StyledContent, StyledName, StyledLeft } from './style';
+import { Link } from 'react-router-dom';
 
 const MealHeader = (props) => {
-    const { user, savings } = props; 
+    const { user, savings } = props;
     return (
         <StyledHeader>
             <StyledLeft>
@@ -22,6 +23,11 @@ const MealHeader = (props) => {
                     </div>
                 </div>
             </StyledContent>
+            <div style={{ float: 'right' }}>
+                <Link to="/signupPreferences">
+                    <img src="img/edit.png" style={{ width: '40px', paddingRight: '1em', paddingTop: '1em', opacity: '0.6' }}></img>
+                </Link>
+            </div>
         </StyledHeader>
     );
 }
