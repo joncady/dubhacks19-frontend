@@ -21,21 +21,25 @@ class App extends React.Component {
 		super();
 		this.state = {
 			user: null,
-			meals: null
+			meals: null,
+			client: new Client()
 		}
 	}
 
 	componentDidMount() {
-		let client = new Client("http://localhost:3030");
-		client.login(null, {
-			username: "test",
-			password: "pass"
-		});
+		const { client } = this.state;
+		client.getUserData(1, this.updateData);
+		client.getMeals(this.updateData);
+		client.getSocialData(this.updateData);
+		client.getUserSummary(1, this.updateData);
 	}
 
-	respond = (data) => {
-		this.setState({
-			meals: data.meals
+	updateData = (key, value) => {
+		this.setState(prevState => {
+			return {
+				...prevState,
+				[key]: value
+			};
 		})
 	}
 
@@ -47,6 +51,9 @@ class App extends React.Component {
 						<Switch>
 							<Route exact path="/">
 								<div>Meal</div>
+							</Route>
+							<Route path="/signup">
+								<UserSignUp />
 							</Route>
 							<Route path="/login">
 								<UserSignIn />
