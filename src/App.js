@@ -1,6 +1,10 @@
 import React from 'react';
 import { Button } from './components/Button/Button';
 import Card from './components/Card/Card';
+import MealCard from './components/MealCard/MealCard';
+import MealTypeSelection from './components/MealTypeSelection/MealTypeSelection';
+import ProfileCard from './components/ProfileCard/ProfileCard';
+import UserPreferencesForm from './components/UserPreferencesForm/UserPreferencesForm';
 import {
 	BrowserRouter as Router,
 	Switch,
