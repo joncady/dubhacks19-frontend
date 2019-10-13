@@ -18,6 +18,9 @@ import UserSignUp from './screens/Onboarding/UserSignUp';
 import Client from './client/Client';
 import SummaryChart from './components/SummaryChart/SummaryChart';
 
+// Screens
+import Landing from './screens/Landing/Landing';
+
 class App extends React.Component {
 
 	constructor() {
@@ -68,10 +71,7 @@ class App extends React.Component {
 
 							</Route>
 							<Route path="/front">
-								<h1>Hapi</h1>
-								<h2>Build your smart diet.</h2>
-								<Button color="success">Sign In</Button>{' '}
-								<Button color="primary">Sign Up</Button>{' '}
+								<Landing />
 							</Route>
 							<Route path="/signupName">
 								<UserNameForm />
