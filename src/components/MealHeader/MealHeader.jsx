@@ -3,7 +3,7 @@ import { StyledHeader, StyledImage, StyledContent, StyledName, StyledLeft } from
 import { Link } from 'react-router-dom';
 
 const MealHeader = (props) => {
-    const { location, budget, firstName, lastName, profilePic } = props;
+    let { location, firstName, lastName, profilePic, remainingBudget } = props;
     return (
         <StyledHeader>
             <StyledLeft>
@@ -15,7 +15,7 @@ const MealHeader = (props) => {
                     <div style={{ fontSize: '14px', color: 'gray' }}>{(new Date()).toDateString()}</div>
                     <div>Your remaing balance is:</div>
                     <div>
-                        <span style={{ color: '#58C077', fontSize: '40px' }}>${budget}</span> <span style={{ fontSize: '40px', fontWeight: 'bold' }}>USD</span>
+                        <span style={{ color: '#58C077', fontSize: '40px' }}>${remainingBudget}</span> <span style={{ fontSize: '40px', fontWeight: 'bold' }}>USD</span>
                     </div>
                     <div style={{ color: 'gray' }}>
                         {location}

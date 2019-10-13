@@ -10,10 +10,10 @@ export default class Meal extends React.Component {
     }
 
     render() {
-        let { meals, user, setBudget} = this.props;
+        let { meals, user, setBudget, budget } = this.props;
         return (
             <div>
-                <MealHeader {...user} />
+                <MealHeader {...user} remainingBudget={budget} />
                 <StyledMealContainer>
                     {meals ?
                         <div>
