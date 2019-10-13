@@ -1,6 +1,10 @@
 import React from 'react';
 import { Button } from './components/Button/Button';
 import Card from './components/Card/Card';
+import MealCard from './components/MealCard/MealCard';
+import MealTypeSelection from './components/MealTypeSelection/MealTypeSelection';
+import ProfileCard from './components/ProfileCard/ProfileCard';
+import UserPreferencesForm from './components/UserPreferencesForm/UserPreferencesForm';
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -15,10 +19,14 @@ function App() {
 				<div>
 					<Switch>
 						<Route exact path="/">
-							<div>Meal</div>
+
 						</Route>
 						<Route path="/summary">
-
+							<MealTypeSelection />
+							<ProfileCard buttonLabel="Profile" name="Jon Cady" content="Saved $1000!"/>
+							<UserPreferencesForm />
+							<MealCard title="Title" calories="100 Calories" description="This is an example mealplan"/>
+							<MealCard title="Title" calories="100 Calories" description="This is an example mealplan"/>
 						</Route>
 						<Route path="/dashboard">
 							
