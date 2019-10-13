@@ -6,7 +6,7 @@ import { SquareLoader } from 'react-spinners';
 const Social = (props) => {
     const posts = props.posts;
     return (
-        <div>
+        <div style={{ marginBottom: '2em' }}>
             <div style={{ textAlign: 'center', marginTop: '2em' }}>
                 <Button color={"success"}><img src="img/writing.png" width="17" style={{ marginRight: '5px' }} alt="writing"></img>Write a post!</Button>
             </div>

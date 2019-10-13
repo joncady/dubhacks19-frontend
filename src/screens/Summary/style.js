@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledSummary = styled.div`
     padding-left: 10%;
     padding-right: 10%;
+    margin-bottom: 6em;
 `;
 
 export const StyledH1 = styled.h1`

@@ -12,7 +12,7 @@ export default class Meal extends React.Component {
     render() {
         let { meals, user, setBudget, budget } = this.props;
         return (
-            <div>
+            <div style={{ marginBottom: '4em'}}>
                 <MealHeader {...user} remainingBudget={budget} />
                 <StyledMealContainer>
                     {meals ?

@@ -3,7 +3,7 @@ import { PROD_URL, LOCAL_URL, PROD } from '../constants';
 class Client {
 
     constructor() {
-        this.url = process.env.NODE_ENV === PROD ? PROD_URL : LOCAL_URL;
+        this.url =  PROD_URL;
     }
 
     async getMeals(callback) {

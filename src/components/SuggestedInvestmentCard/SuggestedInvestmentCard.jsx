@@ -10,7 +10,7 @@ const SuggestedInvestmentCard = (props) => {
         <StyledCard body>
             <CardImg style={{width: "auto", height: "30px", padding: "3%", margin: "auto"}} src={img} />
             <StyledCardText>{description}</StyledCardText>
-            <Button color="success">Learn More</Button>
+            <Button color="success" style={{ fontSize: '14px'}}>Learn More</Button>
         </StyledCard>
     );
 };

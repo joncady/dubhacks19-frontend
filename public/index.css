@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'AirbnbCerealMedium';
+    src: url('./AirbnbCereal-Medium.ttf');
+}
+
+#app, button {
+    font-family: 'AirbnbCerealMedium'!important;
+}

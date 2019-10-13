@@ -1,8 +1,4 @@
 import React from 'react';
-import UserPreferencesForm from './screens/UserPreferencesForm/UserPreferencesForm';
-import UserBudgetForm from './screens/UserBudgetForm/UserBudgetForm';
-import UserNameForm from './screens/UserNameForm/UserNameForm';
-import Summary from './screens/Summary/Summary';
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -16,6 +12,10 @@ import { OneTabStyle, TabStyle, AppStyle , ViewportStyle } from './globalStyle';
 import Landing from './screens/Landing/Landing';
 import Social from './screens/Social/Social';
 import Meal from './screens/Meal/Meal';
+import UserPreferencesForm from './screens/UserPreferencesForm/UserPreferencesForm';
+import UserBudgetForm from './screens/UserBudgetForm/UserBudgetForm';
+import UserNameForm from './screens/UserNameForm/UserNameForm';
+import Summary from './screens/Summary/Summary';
 
 class App extends React.Component {
 
@@ -95,56 +95,56 @@ class App extends React.Component {
 	render() {
 		let { summary, meals, form, social, user, client } = this.state;
 		return (
-			<div className="App">
-				<AppStyle>
-					<Router>
-						<ViewportStyle>
-							<Switch>
-								<Route path="/meal">
-									<Meal meals={meals} getData={(id) => client.getUserData(id, this.fillForm)} callback={this.fillForm} budget={this.state.form.budget} user={user} setBudget={this.setBudget} />
-								</Route>
-								<Route path="/summary">
-									<Summary getData={(id) => client.getUserSummary(id, this.updateData)} expenditure={summary} currency={form.currency} />
-								</Route>
-								<Route path="/signupName">
-									<UserNameForm onChange={this.changeFormData} {...form} />
-								</Route>
-								<Route path="/signupPreferences">
-									<UserPreferencesForm onChange={this.changeFormData} {...form} />
-								</Route>
-								<Route path="/signupBudget">
-									<UserBudgetForm onChange={this.changeFormData} {...form} />
-								</Route>
-								<Route exact path="/">
-									<Landing />
-								</Route>
-								<Route path="/social">
-									<Social posts={social} />
-								</Route>
-							</Switch>
-						</ViewportStyle>
-						<TabStyle>
-							<OneTabStyle>
-								<Link to="/meal" style={{ textDecoration: 'none', color: 'white' }}>
-									<div><img width="25" src="img/food.png" alt="meal"></img></div>
-									Meal
+			<div className="App" id="app">
+					<AppStyle>
+						<Router>
+							<ViewportStyle>
+								<Switch>
+									<Route path="/meal">
+										<Meal meals={meals} getData={(id) => client.getUserData(id, this.fillForm)} callback={this.fillForm} budget={this.state.form.budget} user={user} setBudget={this.setBudget} />
+									</Route>
+									<Route path="/summary">
+										<Summary getData={(id) => client.getUserSummary(id, this.updateData)} expenditure={summary} currency={form.currency} />
+									</Route>
+									<Route path="/signupName">
+										<UserNameForm onChange={this.changeFormData} {...form} />
+									</Route>
+									<Route path="/signupPreferences">
+										<UserPreferencesForm onChange={this.changeFormData} {...form} />
+									</Route>
+									<Route path="/signupBudget">
+										<UserBudgetForm onChange={this.changeFormData} {...form} />
+									</Route>
+									<Route exact path="/">
+										<Landing />
+									</Route>
+									<Route path="/social">
+										<Social posts={social} />
+									</Route>
+								</Switch>
+							</ViewportStyle>
+							<TabStyle>
+								<OneTabStyle>
+									<Link to="/meal" style={{ textDecoration: 'none', color: 'white' }}>
+										<div><img width="25" src="img/food.png" alt="meal"></img></div>
+										Meal
+										</Link>
+								</OneTabStyle>
+								<OneTabStyle>
+									<Link to="/summary" style={{ textDecoration: 'none', color: 'white' }}>
+										<div><img width="25" src="img/summary.png" alt="summary"></img></div>
+										Summary
+										</Link>
+								</OneTabStyle>
+								<OneTabStyle>
+									<Link to="/social" style={{ textDecoration: 'none', color: 'white' }}>
+										<div><img width="25" src="img/community.png" alt="community"></img></div>
+										Community
 									</Link>
-							</OneTabStyle>
-							<OneTabStyle>
-								<Link to="/summary" style={{ textDecoration: 'none', color: 'white' }}>
-									<div><img width="25" src="img/summary.png" alt="summary"></img></div>
-									Summary
-									</Link>
-							</OneTabStyle>
-							<OneTabStyle>
-								<Link to="/social" style={{ textDecoration: 'none', color: 'white' }}>
-									<div><img width="25" src="img/community.png" alt="community"></img></div>
-									Community
-								</Link>
-							</OneTabStyle>
-						</TabStyle>
-					</Router>
-				</AppStyle>
+								</OneTabStyle>
+							</TabStyle>
+						</Router>
+					</AppStyle>
 			</div>
 		);
 	}
