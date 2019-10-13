@@ -7,6 +7,7 @@ import ProfileCard from './components/ProfileCard/ProfileCard';
 import UserPreferencesForm from './screens/UserPreferencesForm/UserPreferencesForm';
 import UserBudgetForm from './screens/UserBudgetForm/UserBudgetForm';
 import UserNameForm from './screens/UserNameForm/UserNameForm';
+import Summary from './screens/Summary/Summary';
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -84,7 +85,7 @@ class App extends React.Component {
 									<Meal meals={meals} />
 								</Route>
 								<Route path="/summary">
-									<SummaryChart summary={summary} />
+									<Summary expenditure={[10, 20, 30, 40, 50, 60, 70]} currency={"USD"}/>
 								</Route>
 								<Route path="/signupName">
 									<UserNameForm onChange={this.changeFormData} {...form}/>

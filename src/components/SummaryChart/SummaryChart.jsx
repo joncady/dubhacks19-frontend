@@ -1,35 +1,51 @@
-import React, { Component } from 'react';
-import * as d3 from "d3";
-
-class SummaryChart extends Component {
-    componentDidMount() {
-        this.drawChart();
-    }
-
-    drawChart = () => {
-        const { summary } = this.props;
-        if (summary) {
-            const svg = d3.select("body")
-                .append("svg")
-                .attr("width", 700)
-                .attr("height", 300)
-                .style("margin-left", 100);
-
-            svg.selectAll("rect")
-                .data(summary.data)
-                .enter()
-                .append("rect")
-                .attr("x", (d, i) => i * 70)
-                .attr("y", (d, i) => 300 - 10 * d)
-                .attr("width", 65)
-                .attr("height", (d, i) => d * 10)
-                .attr("fill", "green")
-        }
-
-    }
-
+// MyBarChart.js
+import React from 'react';
+import {
+    XYPlot,
+    XAxis, // Shows the values on x axis
+    YAxis, // Shows the values on y axis
+    VerticalBarSeries,
+    LabelSeries
+} from 'react-vis';
+class SummaryChart extends React.Component {
     render() {
-        return <div id={"#" + this.props.id}></div>
+        
+        const data = [
+            { "y": this.props.expenditure[0], "x": "Sun" },
+            { "y": this.props.expenditure[1], "x": "Mon" },
+            { "y": this.props.expenditure[2], "x": "Tues" },
+            { "y": this.props.expenditure[3], "x": "Wed" },
+            { "y": this.props.expenditure[4], "x": "Thu" },
+            { "y": this.props.expenditure[5], "x": "Fri" },
+            { "y": this.props.expenditure[6], "x": "Sat" }
+        ];
+        
+        const chartWidth = 300;
+        const chartHeight = 180;
+        const chartDomain = [0, Math.max(...this.props.expenditure) + 20];
+        return (
+            <XYPlot 
+                xType="ordinal" 
+                width={chartWidth} 
+                height={chartHeight} 
+                yDomain={chartDomain}
+                fill= "58C077"
+            >
+                <XAxis />
+                <YAxis />
+                <VerticalBarSeries
+                    data={data}
+                    barWidth= "0.6"
+                />
+                <LabelSeries
+                    data={data.map(obj => {
+                        return { ...obj, label: "$" + obj.y.toString() }
+                    })}
+                    labelAnchorX="middle"
+                    labelAnchorY="text-after-edge"
+                />
+            </XYPlot>
+        );
     }
 }
 
