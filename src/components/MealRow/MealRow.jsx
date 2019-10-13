@@ -12,7 +12,7 @@ export const MealRow = (props) => {
                 <Button color="success">Add people</Button>
             </StyledMealHeader>
             <StyledMealRow>
-                {meals.map(meal => (<MealCard />))}
+                {meals.map(meal => (<MealCard {...meal} />))}
             </StyledMealRow>
         </div>
     )

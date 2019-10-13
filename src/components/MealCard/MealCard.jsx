@@ -1,29 +1,23 @@
 import React from 'react';
 import { Button } from '../Button/Button';
 import {
-	Card, CardImg, CardText, CardBody,
-	CardTitle, CardSubtitle
+	CardImg, CardText
 } from 'reactstrap';
-
-
-// Each meal card uses the following props:
-// title - name of the mealplan
-// picture - picture of the mealplan
-// description - description of the mealplan
-// calories - calorie count of the mealplan 
+import { StyledCardSubHeader, StyledCard, StyledCardBody, StyledPrice, StyledTitle } from './style';
 
 const MealCard = (props) => {
-	const { title, picture, restaurant, description, calories } = props;
+	const { title, picture, restaurant, price } = props;
 	return (
-		<Card>
-			<CardImg top src="https://reactstrap.github.io/assets/318x180.svg" alt="Card image cap" />
-			<CardBody>
-				<CardTitle>{title}</CardTitle>
-				<CardSubtitle>{calories}</CardSubtitle>
-				<CardText>{description}</CardText>
-				<Button onClick={() => console.log("closes card and selects mealplan")} text={"Select"} />
-			</CardBody>
-		</Card>
+		<StyledCard>
+			<CardImg top src={picture} alt={title} style={{ borderRadius: "4px" }} />
+			<StyledCardBody>
+				<StyledCardSubHeader>
+					<StyledTitle>{title}</StyledTitle>
+					<StyledPrice>${price}</StyledPrice>
+				</StyledCardSubHeader>
+				<CardText>{restaurant}</CardText>
+			</StyledCardBody>
+		</StyledCard>
 	);
 };
 

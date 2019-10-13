@@ -36,10 +36,10 @@ class App extends React.Component {
 
 	componentDidMount() {
 		const { client } = this.state;
-		client.getUserData(1, this.updateData);
+		// client.getUserData(1, this.updateData);
 		client.getMeals(this.updateData);
-		client.getSocialData(this.updateData);
-		client.getUserSummary(1, this.updateData);
+		// client.getSocialData(this.updateData);
+		// client.getUserSummary(1, this.updateData);
 	}
 
 	updateData = (key, value) => {
@@ -52,7 +52,7 @@ class App extends React.Component {
 	}
 
 	render() {
-		let { summary } = this.state;
+		let { summary, meals } = this.state;
 		return (
 			<div className="App">
 				<AppStyle>
@@ -60,7 +60,7 @@ class App extends React.Component {
 						<ViewportStyle>
 							<Switch>
 								<Route exact path="/meal">
-									<Meal />
+									<Meal meals={meals} />
 								</Route>
 								<Route path="/summary">
 									<SummaryChart summary={summary} />

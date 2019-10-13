@@ -1,14 +1,29 @@
 import React from 'react';
 import { MealRow } from '../../components/MealRow/MealRow';
-
+import MealHeader from '../../components/MealHeader/MealHeader';
+import { StyledMealContainer } from './style';
+import { SquareLoader } from 'react-spinners';
 export default class Meal extends React.Component {
 
     render() {
-        let {} = this.props;
+        let { meals } = this.props;
+        console.log(meals)
         return (
             <div>
-                <header></header>
-                <MealRow></MealRow>
+                <MealHeader savings={35} user={"User 1"} />
+                <StyledMealContainer>
+                    {meals ?
+                        <div>
+                            <MealRow type={"Morning"} meals={meals.mealsMorning}></MealRow>
+                            <MealRow type={"Lunch"} meals={meals.mealsLunch}></MealRow>
+                            <MealRow type={"Night"} meals={meals.mealsNight}></MealRow>
+                        </div>
+                        :
+                        <div style={{ textAlign: "center"}}>
+                            <SquareLoader />
+                        </div>
+                    }
+                </StyledMealContainer>
             </div>
         );
     }

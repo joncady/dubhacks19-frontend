@@ -6,5 +6,6 @@ export const StyledMealHeader = styled.div`
 `;
 
 export const StyledMealRow = styled.div`
-
+    overflow-x: scroll;
+    display: flex;
 `;
