@@ -4,7 +4,7 @@ import { StyledMealHeader, StyledMealRow } from './style';
 import MealCard from '../MealCard/MealCard';
 
 export const MealRow = (props) => {
-    let { meals, type } = props;
+    let { meals, type, setBudget } = props;
     return (
         <div style={{ marginBottom: '5px' }}>
             <StyledMealHeader>
@@ -12,7 +12,7 @@ export const MealRow = (props) => {
                 <Button color="success">Add people</Button>
             </StyledMealHeader>
             <StyledMealRow>
-                {meals.map(meal => (<MealCard key={meal.title} {...meal} />))}
+                {meals.map(meal => (<MealCard key={meal.title + meal.price} {...meal} setBudget={setBudget} />))}
             </StyledMealRow>
         </div>
     )

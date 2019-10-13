@@ -35,7 +35,7 @@ class SummaryChart extends React.Component {
                 <YAxis />
                 <VerticalBarSeries
                     data={data}
-                    barWidth= "0.6"
+                    barWidth={0.6}
                 />
                 <LabelSeries
                     data={data.map(obj => {

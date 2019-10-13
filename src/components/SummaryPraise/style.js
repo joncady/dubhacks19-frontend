@@ -8,6 +8,7 @@ export const Box = styled.div`
     flex-direction: row;
     margin-top: 5%;
     margin-bottom: 5%;
+    padding: 5px;
 `
 export const Price = styled.h1`
     color: #58C077;

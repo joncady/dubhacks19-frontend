@@ -10,13 +10,12 @@ import {
 	Link
 } from "react-router-dom";
 import Client from './client/Client';
-import SummaryChart from './components/SummaryChart/SummaryChart';
-import { AppStyle, ViewportStyle, TabStyle, OneTabStyle } from './globalStyle';
-import Meal from './screens/Meal/Meal';
+import { OneTabStyle, TabStyle, AppStyle , ViewportStyle } from './globalStyle';
 
 // Screens
 import Landing from './screens/Landing/Landing';
 import Social from './screens/Social/Social';
+import Meal from './screens/Meal/Meal';
 
 class App extends React.Component {
 
@@ -44,7 +43,6 @@ class App extends React.Component {
 		const { client } = this.state;
 		client.getMeals(this.updateData);
 		client.getSocialData(this.updateData);
-		// client.getUserSummary(1, this.updateData);
 	}
 
 	updateData = (key, value) => {
@@ -64,6 +62,19 @@ class App extends React.Component {
 				form: {
 					...prevState.form,
 					...formValues
+				}
+			}
+		});
+	}
+
+	setBudget = (price, selected) => {
+		this.setState(prevState => {
+			let priceChange = selected ? prevState.form.budget - price : prevState.form.budget + price;
+			return {
+				...prevState,
+				form: {
+					...prevState.form,
+					budget: priceChange
 				}
 			}
 		});
@@ -90,10 +101,10 @@ class App extends React.Component {
 						<ViewportStyle>
 							<Switch>
 								<Route path="/meal">
-									<Meal meals={meals} getData={(id) => client.getUserData(id, this.fillForm)} callback={this.fillForm} user={user} />
+									<Meal meals={meals} getData={(id) => client.getUserData(id, this.fillForm)} callback={this.fillForm} budget={this.state.form.budget} user={user} setBudget={this.setBudget} />
 								</Route>
 								<Route path="/summary">
-									<Summary expenditure={[10, 20, 30, 40, 50, 60, 70]} currency={"USD"}/>
+									<Summary getData={(id) => client.getUserSummary(id, this.updateData)} expenditure={summary} currency={form.currency} />
 								</Route>
 								<Route path="/signupName">
 									<UserNameForm onChange={this.changeFormData} {...form} />

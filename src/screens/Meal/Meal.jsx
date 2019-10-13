@@ -10,16 +10,16 @@ export default class Meal extends React.Component {
     }
 
     render() {
-        let { meals, user} = this.props;
+        let { meals, user, setBudget} = this.props;
         return (
             <div>
                 <MealHeader {...user} />
                 <StyledMealContainer>
                     {meals ?
                         <div>
-                            <MealRow type={"Morning"} meals={meals.mealsMorning}></MealRow>
-                            <MealRow type={"Lunch"} meals={meals.mealsLunch}></MealRow>
-                            <MealRow type={"Night"} meals={meals.mealsNight}></MealRow>
+                            <MealRow type={"Morning"} meals={meals.mealsMorning} setBudget={setBudget}></MealRow>
+                            <MealRow type={"Lunch"} meals={meals.mealsLunch} setBudget={setBudget}></MealRow>
+                            <MealRow type={"Night"} meals={meals.mealsNight} setBudget={setBudget}></MealRow>
                         </div>
                         :
                         <div style={{ textAlign: "center", marginTop: '1em'}}>

@@ -14,10 +14,12 @@ export class MealCard extends React.Component {
 	}
 
 	render() {
-		const { title, picture, restaurant, price } = this.props;
-		console.log(this.state.selected)
+		const { title, picture, restaurant, price, setBudget } = this.props;
 		return (
-			<StyledCard onClick={() => (this.setState({ selected: !this.state.selected}))} selected={this.state.selected}>
+			<StyledCard onClick={() => {
+				this.setState({ selected: !this.state.selected});
+				setBudget(price, !this.state.selected);
+			}} selected={this.state.selected}>
 				<CardImg top src={picture} alt={title} style={{ borderRadius: "4px" }} />
 				<StyledCardBody>
 					<StyledCardSubHeader>

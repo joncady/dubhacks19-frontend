@@ -8,11 +8,11 @@ const SummaryPraise = (props) => {
 	return (
 		<div>
             <Box>
-                <img style={{width: "25%", height: "25%", padding: "3%"}} src="img/target.png"/>
+                <img style={{width: "25%", height: "25%", padding: "3%"}} src="img/target.png" alt="target" />
                 <div>
                     <p>Nice work! On average this week you spent:</p>
-                    <Price>${props.averageExpenditure} </Price>
-                    <Currency>{props.currency}</Currency>
+                    <Price>${averageExpenditure} </Price>
+                    <Currency>{currency}</Currency>
                 </div>
             </Box>
 
