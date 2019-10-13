@@ -6,10 +6,10 @@ import { SquareLoader } from 'react-spinners';
 export default class Meal extends React.Component {
 
     render() {
-        let { meals } = this.props;
+        let { meals, user} = this.props;
         return (
             <div>
-                <MealHeader savings={35} user={"User 1"} />
+                <MealHeader {...user} />
                 <StyledMealContainer>
                     {meals ?
                         <div>

@@ -4,22 +4,22 @@ import { StyledHeader, StyledImage, StyledContent, StyledName, StyledLeft } from
 import { Link } from 'react-router-dom';
 
 const MealHeader = (props) => {
-    const { user, savings } = props;
+    const { location, budget, firstName, lastName, profilePic } = props;
     return (
         <StyledHeader>
             <StyledLeft>
-                <StyledImage src={"img/userPic.jpg"}></StyledImage>
-                <StyledName>{user}</StyledName>
+                <StyledImage src={profilePic}></StyledImage>
+                <StyledName>{firstName} {lastName}</StyledName>
             </StyledLeft>
             <StyledContent>
                 <div style={{ padding: '5px' }}>
                     <div style={{ fontSize: '14px', color: 'gray' }}>{(new Date()).toDateString()}</div>
                     <div>Your remaing balance is:</div>
                     <div>
-                        <span style={{ color: '#58C077', fontSize: '40px' }}>${savings}</span> <span style={{ fontSize: '40px', fontWeight: 'bold' }}>USD</span>
+                        <span style={{ color: '#58C077', fontSize: '40px' }}>${budget}</span> <span style={{ fontSize: '40px', fontWeight: 'bold' }}>USD</span>
                     </div>
                     <div style={{ color: 'gray' }}>
-                        Seattle, WA
+                        {location}
                     </div>
                 </div>
             </StyledContent>

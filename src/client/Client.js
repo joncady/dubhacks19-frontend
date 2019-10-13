@@ -15,7 +15,6 @@ class Client {
     async getUserData(id, callback) {
         let response = await fetch(`${this.url}/getUserProfile?id=${id}`);
         let data = await response.json();
-        console.log(data)
         callback("user", data.user);
     }
 

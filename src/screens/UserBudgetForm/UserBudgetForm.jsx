@@ -17,21 +17,23 @@ const UserBudgetForm = (props) => {
     <StyledUserBudgetForm>
       <StyledH1>Almost done...</StyledH1>
       <Form>
-          <StyledFormGroup>
-              <StyledLabel for="exampleText">What's your daily budget?</StyledLabel>
-              <Input type="text" onChange={(e) => onChange("budget", e.currentTarget.value)} value={budget} name="text" id="userBudget" style={style}/>
-              <select onChange={(e) => onChange("currency", e.currentTarget.value)} value={currency}>
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-                <option value="RMB">RMB</option>
-              </select>
-          </StyledFormGroup>
-          <StyledFormGroup>
-              <StyledLabel for="exampleText">What's your daily calorie goal?</StyledLabel>
-              <Input type="text" name="text" onChange={(e) => onChange("calorieGoal", e.currentTarget.value)} value={calorieGoal} id="userCalorieGoal" style={style}/>
-          </StyledFormGroup>
-          <Link to="/signupPreferences"><Button color="secondary">Back</Button>{' '}</Link>
+        <StyledFormGroup>
+          <StyledLabel for="exampleText">What's your daily budget?</StyledLabel>
+          <Input type="text" onChange={(e) => onChange("budget", e.currentTarget.value)} value={budget} name="text" id="userBudget" style={style} />
+          <select onChange={(e) => onChange("currency", e.currentTarget.value)} value={currency}>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="RMB">RMB</option>
+          </select>
+        </StyledFormGroup>
+        <StyledFormGroup>
+          <StyledLabel for="exampleText">What's your daily calorie goal?</StyledLabel>
+          <Input type="text" name="text" onChange={(e) => onChange("calorieGoal", e.currentTarget.value)} value={calorieGoal} id="userCalorieGoal" style={style} />
+        </StyledFormGroup>
+        <Link to="/signupPreferences"><Button color="secondary">Back</Button>{' '}</Link>
+        <Link to="/meal">
           <Button color="success">Get Started</Button>{' '}
+        </Link>
       </Form>
     </StyledUserBudgetForm>
   );
