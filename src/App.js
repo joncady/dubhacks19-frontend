@@ -4,9 +4,9 @@ import Card from './components/Card/Card';
 import MealCard from './components/MealCard/MealCard';
 import MealTypeSelection from './components/MealTypeSelection/MealTypeSelection';
 import ProfileCard from './components/ProfileCard/ProfileCard';
-import UserPreferencesForm from './components/UserPreferencesForm/UserPreferencesForm';
-import UserBudgetForm from './components/UserBudgetForm/UserBudgetForm';
-import UserNameForm from './components/UserNameForm/UserNameForm';
+import UserPreferencesForm from './screens/UserPreferencesForm/UserPreferencesForm';
+import UserBudgetForm from './screens/UserBudgetForm/UserBudgetForm';
+import UserNameForm from './screens/UserNameForm/UserNameForm';
 import {
 	BrowserRouter as Router,
 	Switch,

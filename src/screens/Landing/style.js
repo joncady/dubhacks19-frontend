@@ -8,6 +8,8 @@ export const StyledLanding = styled.div`
     background-position: center;
     width: auto;
     height: 100vh;
+    padding-left: 10%;
+    padding-right: 10%;
 `;
 
 export const StyledH1 = styled.h1`
@@ -21,7 +23,3 @@ export const StyledH2 = styled.h2`
     text-align: center;
     color: white;
 `;
-
-export const StyledButton = styled.button`
-    width: 20%;
-`
