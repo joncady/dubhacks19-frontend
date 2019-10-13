@@ -22,7 +22,6 @@ class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			user: null,
 			meals: null,
 			client: new Client(),
 			user: null,
@@ -35,7 +34,8 @@ class App extends React.Component {
 				calorieGoal: 0,
 				dietRestrictions: [0, 0, 0],
 				cuisines: [0, 0, 0, 0]
-			}
+			},
+			summary: null
 		}
 	}
 

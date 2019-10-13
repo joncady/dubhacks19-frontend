@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Label, CustomInput, Button } from 'reactstrap';
+import { Label, CustomInput } from 'reactstrap';
 
 
 export const StyledUserPreferencesForm = styled.div`

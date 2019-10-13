@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledUserNameForm, StyledH1, InputSpacer, ButtonSpacer, StyledInput } from './style';
+import { StyledUserNameForm, StyledH1, InputSpacer, ButtonSpacer } from './style';
 import { Button, Form, FormGroup, Input } from 'reactstrap';
 
 import {
@@ -21,13 +21,13 @@ const UserNameForm = (props) => {
       <Form>
           <FormGroup>
               <StyledH1>Welcome.</StyledH1>
-              <img src="img/camera.png" style={{
+              <img src="img/logo.png" style={{
                 width: '25%',
                 height: '25%',
                 display: 'block',
                 marginLeft: 'auto',
                 marginRight: 'auto'
-              }}/>
+              }} alt="logo" />
               <InputSpacer><Input type="text" onChange={(e) => onChange("firstName", e.currentTarget.value)} value={firstName} name="text" id="userFirstName" placeholder="First Name" style={style}/></InputSpacer>
               <InputSpacer><Input type="text" onChange={(e) => onChange("lastName", e.currentTarget.value)} value={lastName} name="text" id="userLastName" placeholder="Last Name" style={style}/></InputSpacer>
               <InputSpacer><Input type="text" onChange={(e) => onChange("location", e.currentTarget.value)} value={location} name="text" id="userLocation" placeholder="Location" style={style}/></InputSpacer>

@@ -8,7 +8,7 @@ const Social = (props) => {
     return (
         <div>
             <div style={{ textAlign: 'center', marginTop: '2em' }}>
-                <Button color={"success"}><img src="img/writing.png" width="17" style={{ marginRight: '5px' }}></img>Write a post!</Button>
+                <Button color={"success"}><img src="img/writing.png" width="17" style={{ marginRight: '5px' }} alt="writing"></img>Write a post!</Button>
             </div>
             <div style={{ marginTop: '1em', padding: '1em' }}>
                 {posts ? posts.map(post => (<Post key={post.time._seconds} {...post}></Post>)) :

@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledUserPreferencesForm, StyledH1, StyledLabel, StyledCustomInput } from './style';
-import { Button, Form, FormGroup, Label, Input, FormText, CustomInput } from 'reactstrap';
+import { Button, Form, FormGroup } from 'reactstrap';
 import { Link } from "react-router-dom";
 
 
@@ -20,7 +20,7 @@ const UserPreferencesForm = (props) => {
                     <div>
                         <StyledCustomInput type="checkbox" checked={dietRestrictions[0]} onChange={() => editArray(dietRestrictions, "dietRestrictions", 0, onChange)} id="diet1" label="Vegetarian" />
                         <StyledCustomInput type="checkbox" checked={dietRestrictions[1]} onChange={() => editArray(dietRestrictions, "dietRestrictions", 1, onChange)} id="diet2" label="Vegan" />
-                        <StyledCustomInput type="checkbox" checked={dietRestrictions[2]}  onChange={() => editArray(dietRestrictions, "dietRestrictions", 2, onChange)} id="diet3" label="Pescetarian" />
+                        <StyledCustomInput type="checkbox" checked={dietRestrictions[2]} onChange={() => editArray(dietRestrictions, "dietRestrictions", 2, onChange)} id="diet3" label="Pescetarian" />
                     </div>
                 </FormGroup>
                 <FormGroup>
