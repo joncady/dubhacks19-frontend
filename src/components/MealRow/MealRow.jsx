@@ -6,7 +6,7 @@ import MealCard from '../MealCard/MealCard';
 export const MealRow = (props) => {
     let { meals, type } = props;
     return (
-        <div>
+        <div style={{ marginBottom: '5px' }}>
             <StyledMealHeader>
                 <h2>{type} Meal</h2>
                 <Button color="success">Add people</Button>

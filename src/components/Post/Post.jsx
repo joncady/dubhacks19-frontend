@@ -16,8 +16,7 @@ const Posts = (props) => {
                     {picture && <div style={{ width: '70%', padding: '10px' }}><img style={{ width: '100%', borderRadius: '4px' }} alt="pic" src={picture}></img></div>}
                     <div style={{ display: 'flex' }}>
                         <div><div style={{ width: '15px', display: 'inline-block', marginRight: '10px' }}><img src="img/heart.png" style={{ width: '100%' }} alt="heart"></img></div>
-                            {likes}</div>
-                        
+                            {likes}</div> 
                         <div style={{ marginLeft: '15px' }}><div style={{ width: '15px', display: 'inline-block', marginRight: '10px' }}><img src="img/comment.png" style={{ width: '100%' }} alt="comments"></img></div>{comments}</div>
                     </div>
                     <hr></hr>

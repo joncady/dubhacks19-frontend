@@ -5,6 +5,10 @@ import { StyledMealContainer } from './style';
 import { SquareLoader } from 'react-spinners';
 export default class Meal extends React.Component {
 
+    componentDidMount = () => {
+        this.props.getData(1);
+    }
+
     render() {
         let { meals, user} = this.props;
         return (

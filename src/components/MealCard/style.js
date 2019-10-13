@@ -10,9 +10,8 @@ export const StyledCardSubHeader = styled.div`
 export const StyledCard = styled(Card)`
     width: 45vw;
     flex: none;
-    margin: 1em;
-    margin: 10px;
-    border: none!important;
+    padding: 10px;
+    border: ${props => props.selected ? '1px solid green !important' : 'none!important'};
     background-color: transparent!important;
 `;
 

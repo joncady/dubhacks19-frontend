@@ -41,7 +41,6 @@ class App extends React.Component {
 
 	componentDidMount() {
 		const { client } = this.state;
-		client.getUserData(1, this.fillForm);
 		client.getMeals(this.updateData);
 		client.getSocialData(this.updateData);
 		// client.getUserSummary(1, this.updateData);
@@ -82,15 +81,15 @@ class App extends React.Component {
 	}
 
 	render() {
-		let { summary, meals, form, social, user } = this.state;
+		let { summary, meals, form, social, user, client } = this.state;
 		return (
 			<div className="App">
 				<AppStyle>
 					<Router>
 						<ViewportStyle>
 							<Switch>
-								<Route exact path="/meal">
-									<Meal meals={meals} user={user} />
+								<Route path="/meal">
+									<Meal meals={meals} getData={(id) => client.getUserData(id, this.fillForm)} callback={this.fillForm} user={user} />
 								</Route>
 								<Route path="/summary">
 									<SummaryChart summary={summary} />
@@ -104,10 +103,10 @@ class App extends React.Component {
 								<Route path="/signupBudget">
 									<UserBudgetForm onChange={this.changeFormData} {...form} />
 								</Route>
-								<Route path="/landing">
+								<Route exact path="/">
 									<Landing />
 								</Route>
-								<Route to="/social">
+								<Route path="/social">
 									<Social posts={social} />
 								</Route>
 							</Switch>
